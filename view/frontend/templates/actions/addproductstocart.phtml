@@ -1,0 +1,21 @@
+<?php
+/**
+ * @var \Gaiterjones\AjaxButton\Block\AjaxButton $block
+ */
+
+$_ajax = $block->getData();
+$_productIds=$_ajax['ajaxdata']['action_data']['productids'];
+$_addToCart=$block->addProductsToCart($_productIds);
+
+?>
+<div class="container">
+    <div class="row">
+        <span><i style="color: green;" class="fa fa-check fa-2x" aria-hidden="true"></i>
+        <?php if($_addToCart->success): ?>
+            &nbsp;<?php echo $_addToCart->output ?>
+        <?php else: ?>
+            &nbsp;<?php echo $_addToCart->output ?>
+        <?php endif; ?>
+        </span>
+    </div>
+</div/

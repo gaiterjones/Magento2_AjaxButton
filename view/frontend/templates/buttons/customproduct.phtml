@@ -1,0 +1,57 @@
+<?php
+/**
+ * @var \Gaiterjones\AjaxButton\Block\AjaxButton $block
+ */
+
+const PARAM_NAME_BASE64_URL = 'r64';
+const PARAM_NAME_URL_ENCODED = 'uenc';
+use Magento\Framework\App\Action\Action;
+
+$_ajax = $block->getData();
+$_productId=$_ajax['ajaxdata']['button_data']['productids'];
+$_product=$block->getProductById($_productId);
+
+?>
+<?php if($_product): ?>
+<?php
+$_imageHelper = $this->helper('Magento\Catalog\Helper\Image');
+$image_height=175;
+$image_width=175;
+$postParams = $block->getAddToCartPostParams($_product);
+$productImageUrl = $_imageHelper->init($_product, 'small_image', ['type'=>'small_image'])->keepAspectRatio(true)->resize($image_width,$image_height)->getUrl();
+?>
+<div class="container">
+
+    <div class="row">
+        <h3><?php echo $_product->getName(); ?></h3>
+    </div>
+
+    <div class="row" style="padding-bottom:25px;">
+        <p><? echo __('Custom Product'); ?></p>
+    </div>
+
+    <div class="row justify-content-center ">
+
+        <div class="product product-item">
+
+            <img title="<?php echo $_product->getName(); ?>" class="product-image" src="<?php echo $productImageUrl; ?>" width="<?php echo $image_width; ?>" height="<?php echo $image_height; ?>"/>
+
+            <div class="row justify-content-center ">
+                    <form data-role="tocart-form" data-product-sku="<?= $block->escapeHtml($_product->getSku()) ?>" action="<?= $block->escapeUrl($postParams['action']) ?>" method="post">
+                        <input type="hidden" name="product" value="<?= $block->escapeHtmlAttr($postParams['data']['product']) ?>">
+                        <input type="hidden" name="<?= /* @noEscape */ Action::PARAM_NAME_URL_ENCODED ?>" value="<?= /* @noEscape */ $postParams['data'][Action::PARAM_NAME_URL_ENCODED] ?>">
+                        <?= $block->getBlockHtml('formkey') ?>
+                        <button type="submit"
+                                title="<? echo $_product->getName() ?>"
+                                class="action tocart primary">
+                            <span><?= $block->escapeHtml(__('Add to Cart')) ?></span>
+                        </button>
+                    </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<?php endif; ?>

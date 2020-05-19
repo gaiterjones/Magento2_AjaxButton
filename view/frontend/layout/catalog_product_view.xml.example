@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * GAITERJONES AjaxButton Product layout example
+ */
+-->
+<page layout="2columns-right" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Gaiterjones\AjaxButton\Block\AjaxButton" after="product.info.details" name="gj-ajaxbutton-helloworld" template="Gaiterjones_AjaxButton::ajaxbutton.phtml"></block>
+            <block class="Gaiterjones\AjaxButton\Block\AjaxButton" after="product.info.details" name="gj-ajaxbutton-customproduct" template="Gaiterjones_AjaxButton::ajaxbutton.phtml">
+                <arguments>
+                    <argument name="ajaxbuttonid" xsi:type="string">2</argument>
+                    <argument name="button_name" xsi:type="string">Custom Product Add To Cart Button</argument>
+                    <argument name="button_template" xsi:type="string">customproduct</argument>
+                    <argument name="button_class" xsi:type="string">product</argument>
+                    <argument name="button_data" xsi:type="array">
+                        <item name="addtocart" xsi:type="boolean">true</item>
+                        <item name="productids" xsi:type="string">9036</item>
+                    </argument>
+                    <argument name="action_template" xsi:type="string">customproduct</argument>
+                </arguments>
+            </block>
+            <block class="Gaiterjones\AjaxButton\Block\AjaxButton" after="product.info.details" name="gj-ajaxbutton-addproductstocart" template="Gaiterjones_AjaxButton::ajaxbutton.phtml">
+                <arguments>
+                    <argument name="ajaxbuttonid" xsi:type="string">3</argument>
+                    <argument name="button_name" xsi:type="string">Multi Product Add To Cart Button</argument>
+                    <argument name="button_class" xsi:type="string">product</argument>
+                    <argument name="button_template" xsi:type="string">default</argument>
+                    <argument name="action_template" xsi:type="string">addproductstocart</argument>
+                    <argument name="action_data" xsi:type="array">
+                        <item name="addtocart" xsi:type="boolean">true</item>
+                        <item name="productids" xsi:type="string">9036</item>
+                    </argument>
+                </arguments>
+            </block>
+
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,13 @@
+<?php
+/**
+ * @var \Gaiterjones\AjaxButton\Block\AjaxButton $block
+ */
+
+$_ajax=$block->getData();
+$_button=$block->_helper->getButton($_ajax);
+?>
+<div class="container">
+    <div class="row">
+        <?php echo $_button ?>
+    </div>
+</div>
