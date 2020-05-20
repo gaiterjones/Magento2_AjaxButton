@@ -75,11 +75,11 @@ class AddToCart extends \Magento\Framework\Model\AbstractModel
             $this->_cart->save();
             $this->_messageManager->addSuccess(__('%1 products were added to the cart.', $count));
             $this->_output->success=true;
-            $this->_output->output=$count. ' products were added to the cart!';
+            $this->_output->output=__('%1 products were added to the cart.', $count);
         } catch (\Exception $e) {
             $this->_messageManager->addException($e, __('error.'));
             $this->_output->success=false;
-            $this->_output->output='An error occured';
+            $this->_output->output=__('An error occured');
         }
 
         return $this->_output;
