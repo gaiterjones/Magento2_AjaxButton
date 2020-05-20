@@ -10,7 +10,7 @@ $_addToCart=$block->addProductsToCart($_productIds);
 ?>
 <div class="container">
     <div class="row">
-        <span><i style="color: green;" class="fa fa-check fa-2x" aria-hidden="true"></i>
+        <span><i style="color: green; font-size: 24px;">&#10004;</i>
         <?php if($_addToCart->success): ?>
             &nbsp;<?php echo $_addToCart->output ?>
         <?php else: ?>

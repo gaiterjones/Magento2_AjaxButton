@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Gaiterjones\AjaxButton\Model\Product;
 
 use Magento\Framework\Model\AbstractModel;

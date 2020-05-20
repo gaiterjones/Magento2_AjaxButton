@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Gaiterjones\AjaxButton\Controller\Index;
 

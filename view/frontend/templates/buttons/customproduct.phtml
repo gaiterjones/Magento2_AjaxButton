@@ -36,7 +36,7 @@ $productImageUrl = $_imageHelper->init($_product, 'small_image', ['type'=>'small
 
             <img title="<?php echo $_product->getName(); ?>" class="product-image" src="<?php echo $productImageUrl; ?>" width="<?php echo $image_width; ?>" height="<?php echo $image_height; ?>"/>
 
-            <div class="row justify-content-center ">
+            <div id="customproduct" class="row justify-content-center ">
                     <form data-role="tocart-form" data-product-sku="<?= $block->escapeHtml($_product->getSku()) ?>" action="<?= $block->escapeUrl($postParams['action']) ?>" method="post">
                         <input type="hidden" name="product" value="<?= $block->escapeHtmlAttr($postParams['data']['product']) ?>">
                         <input type="hidden" name="<?= /* @noEscape */ Action::PARAM_NAME_URL_ENCODED ?>" value="<?= /* @noEscape */ $postParams['data'][Action::PARAM_NAME_URL_ENCODED] ?>">

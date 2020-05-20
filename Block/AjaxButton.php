@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Gaiterjones\AjaxButton\Block;
 
 use Gaiterjones\AjaxButton\Model\AjaxButton as GetAjaxButton;
