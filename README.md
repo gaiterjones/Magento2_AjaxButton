@@ -7,7 +7,7 @@ Easily configurable to perform any click/action tasks in Magento using Ajax call
 
     <block class="Gaiterjones\AjaxButton\Block\AjaxButton" name="gj-ajaxbutton-helloworld" template="Gaiterjones_AjaxButton::ajaxbutton.phtml"></block>
 
-The examples here shows a simple hello world button and two add to cart buttons, the first using a standard product view and the second using a button to add multiple products to the cart with one click.
+The examples here show a simple hello world button and two add to cart buttons, the first using a standard product view and the second using a button to add multiple products to the cart with one click.
 
 [https://magento2.gaiterjones.com/en/gaiterjones-dev/ajax-button.html](https://magento2.gaiterjones.com/en/gaiterjones-dev/ajax-button.html)
 
@@ -58,13 +58,13 @@ or
 
 Arguments
 
-ajaxbuttonid - the id of the button
-button_name - text shown on button
-button_class - css class of button
-button_template - frontend/templates/buttons/ template file for creating the button data
-button_data - data passed to button template
-action_template - frontend/templates/actions/ template file for creating the action data when button is clicked
-action_data - data passed to action template
+ajaxbuttonid - the id of the button   
+button_name - text shown on button  
+button_class - css class of button   
+button_template - frontend/templates/buttons/ template file for creating the button data   
+button_data - data passed to button template   
+action_template - frontend/templates/actions/ template file for creating the action data when button is clicked   
+action_data - data passed to action template   
 
 This example will add products id 1, 2, 3, 4, 5 to the cart.
 
