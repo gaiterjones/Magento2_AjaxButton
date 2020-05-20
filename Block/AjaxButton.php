@@ -139,6 +139,18 @@ class AjaxButton extends \Magento\Framework\View\Element\Template
     /**
      * @return string
      */
+    public function getAjaxWrapperClass()
+    {
+        $ajaxWrapperClass='default';
+        if ($this->hasData("wrapper_class")) {
+            $ajaxWrapperClass=$this->getData("wrapper_class");
+        }
+        return $ajaxWrapperClass;
+    }
+
+    /**
+     * @return string
+     */
     public function getAjaxButtonId()
     {
         $ajaxButtonId='1';
