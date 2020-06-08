@@ -11,6 +11,7 @@
             <block class="Gaiterjones\AjaxButton\Block\AjaxButton" after="product.info.details" name="gj-ajaxbutton-customproduct" template="Gaiterjones_AjaxButton::ajaxbutton.phtml">
                 <arguments>
                     <argument name="ajaxbuttonid" xsi:type="string">2</argument>
+                    <argument name="button_debug" xsi:type="boolean">true</argument>
                     <argument name="button_name" xsi:type="string">Custom Product Add To Cart Button</argument>
                     <argument name="button_template" xsi:type="string">customproduct</argument>
                     <argument name="button_class" xsi:type="string">product</argument>
@@ -24,6 +25,7 @@
             <block class="Gaiterjones\AjaxButton\Block\AjaxButton" after="product.info.details" name="gj-ajaxbutton-addproductstocart" template="Gaiterjones_AjaxButton::ajaxbutton.phtml">
                 <arguments>
                     <argument name="ajaxbuttonid" xsi:type="string">3</argument>
+                    <argument name="button_debug" xsi:type="boolean">true</argument>                    
                     <argument name="button_name" xsi:type="string">Multi Product Add To Cart Button</argument>
                     <argument name="button_class" xsi:type="string">product</argument>
                     <argument name="button_template" xsi:type="string">default</argument>

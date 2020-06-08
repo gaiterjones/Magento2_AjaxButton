@@ -2,14 +2,13 @@
 /**
  * @var \Gaiterjones\AjaxButton\Block\AjaxButton $block
  */
-$_debug=true;
 $_ajaxurl=$block->getAjaxUrl();
 $_ajaxButtonId=$block->getAjaxButtonId();
 $_ajaxWrapperClass=$block->getAjaxWrapperClass();
 $_ajaxGetButtonData=$block->ajaxGetButtonData();
 $_ajaxGetActionData=$block->ajaxGetActionData();
 ?>
-<?php if($_debug): ?>
+<?php if($_ajaxGetButtonData['button_debug']): ?>
 <pre>
     GJ AJAXBUTTON DEBUG
     <?php print_r($_ajaxGetButtonData); ?>

@@ -78,8 +78,12 @@ class AjaxButton extends \Magento\Framework\View\Element\Template
         $buttonName='Default Ajax Button';
         $buttonClass='default';
         $buttonTemplate='default';
+        $buttonDebug=false;
         $buttonData=array();
 
+        if ($this->hasData("button_debug")) {
+            $buttonDebug=$this->getData("button_debug");
+        }
         if ($this->hasData("button_name")) {
             $buttonName=$this->getData("button_name");
         }
@@ -95,6 +99,7 @@ class AjaxButton extends \Magento\Framework\View\Element\Template
 
         $_ajaxGetButtonData=array(
             'action' => $action,
+            'button_debug' => $buttonDebug,
             'button_name' => $buttonName,
             'button_class' => $buttonClass,
             'button_template' => $buttonTemplate,
